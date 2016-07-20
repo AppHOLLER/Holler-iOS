@@ -1,0 +1,6 @@
+use_frameworks!
+target 'HOLLER-iOS_Tests' do
+  pod 'HOLLER-iOS', :path => '../'
+  
+  
+end
