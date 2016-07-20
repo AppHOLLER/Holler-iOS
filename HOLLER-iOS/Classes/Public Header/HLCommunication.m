@@ -7,9 +7,9 @@
 //
 
 #import "HLCommunication.h"
-#import <Holler/HLPush.h>
-#import <Holler/HLSMS.h>
-#import <Holler/HLEDM.h>
+#import <HLPush.h>
+#import <HLSMS.h>
+#import <HLEDM.h>
 
 @interface HLCommunication(){
     HLPush *pushManager;

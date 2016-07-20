@@ -7,8 +7,8 @@
 //
 
 #import "HLMiscellaneous.h"
-#import <Holler/HLSubscriber.h>
-#import <Holler/HLConstants.h>
+#import <HLSubscriber.h>
+#import <HLConstants.h>
 
 @interface HLMiscellaneous()
 

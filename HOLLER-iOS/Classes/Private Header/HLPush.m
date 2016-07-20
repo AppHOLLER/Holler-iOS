@@ -7,9 +7,9 @@
 //
 
 #import "HLPush.h"
-#import <Holler/HLServiceManager.h>
-#import <Holler/HLConstants.h>
-#import <Holler/HLMiscellaneous.h>
+#import <HLServiceManager.h>
+#import <HLConstants.h>
+#import <HLMiscellaneous.h>
 
 @implementation HLPush
 

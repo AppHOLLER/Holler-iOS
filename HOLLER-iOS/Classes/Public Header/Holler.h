@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import <Holler/HLError.h>
-#import <Holler/HLPush.h>
-#import <Holler/HLAnalytic.h>
-#import <Holler/HLTarget.h>
-#import <Holler/HLSubscriber.h>
+#import <HLError.h>
+#import <HLPush.h>
+#import <HLAnalytic.h>
+#import <HLTarget.h>
+#import <HLSubscriber.h>
 
 @interface Holler : NSObject
 

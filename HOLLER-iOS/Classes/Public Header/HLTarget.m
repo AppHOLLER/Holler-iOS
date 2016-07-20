@@ -7,8 +7,8 @@
 //
 
 #import "HLTarget.h"
-#import <Holler/HLConstants.h>
-#import <Holler/HLServiceManager.h>
+#import <HLConstants.h>
+#import <HLServiceManager.h>
 
 @implementation HLTarget
 

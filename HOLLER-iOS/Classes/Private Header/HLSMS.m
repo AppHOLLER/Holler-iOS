@@ -7,9 +7,9 @@
 //
 
 #import "HLSMS.h"
-#import <Holler/HLMiscellaneous.h>
-#import <Holler/HLConstants.h>
-#import <Holler/HLServiceManager.h>
+#import <HLMiscellaneous.h>
+#import <HLConstants.h>
+#import <HLServiceManager.h>
 
 @implementation HLSMS
 

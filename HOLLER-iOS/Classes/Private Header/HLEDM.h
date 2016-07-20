@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Holler/HLSubscriber.h>
-#import <Holler/HLError.h>
+#import <HLSubscriber.h>
+#import <HLError.h>
 
 @interface HLEDM : NSObject
 

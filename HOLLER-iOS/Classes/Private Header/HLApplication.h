@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Holler/HLError.h>
+#import <HLError.h>
 
 /*!
  *  @brief HOLLER provide application with two modes for Push Notification Service includes Sanbox (Development) and Production in term Apple APNs

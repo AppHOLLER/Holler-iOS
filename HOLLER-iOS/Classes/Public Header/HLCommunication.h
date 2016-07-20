@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Holler/HLError.h>
-#import <Holler/HLSubscriber.h>
+#import <HLError.h>
+#import <HLSubscriber.h>
 
 @interface HLCommunication : NSObject
 

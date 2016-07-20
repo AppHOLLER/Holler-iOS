@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import <Holler/HLError.h>
+#import <HLError.h>
 
 typedef NS_ENUM(NSInteger, HLTargetType){
     HLTargetIsIndustry,

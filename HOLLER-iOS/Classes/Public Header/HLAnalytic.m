@@ -9,10 +9,10 @@
 #import "HLAnalytic.h"
 
 #import <CoreLocation/CoreLocation.h>
-#import <Holler/HLUtility.h>
-#import <Holler/HLConstants.h>
-#import <Holler/HLServiceManager.h>
-#import <Holler/HLMiscellaneous.h>
+#import <HLUtility.h>
+#import <HLConstants.h>
+#import <HLServiceManager.h>
+#import <HLMiscellaneous.h>
 
 @interface HLAnalytic()<CLLocationManagerDelegate>
 

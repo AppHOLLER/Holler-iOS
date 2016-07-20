@@ -7,9 +7,9 @@
 //
 
 #import "HLApplication.h"
-#import <Holler/HLUtility.h>
-#import <Holler/HLConstants.h>
-#import <Holler/HLServiceManager.h>
+#import <HLUtility.h>
+#import <HLConstants.h>
+#import <HLServiceManager.h>
 
 @implementation HLApplication
 

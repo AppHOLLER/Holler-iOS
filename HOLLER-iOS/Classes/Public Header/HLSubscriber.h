@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Holler/HLError.h>
+#import <HLError.h>
 
 /*!
  *  @brief HLSubscriber represents to Subscriber that managed by HOLLER. Each subscriber have an unique device that can receive Push Notification, SMS Email and Email

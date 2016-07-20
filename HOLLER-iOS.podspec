@@ -1,42 +1,28 @@
-#
-# Be sure to run `pod lib lint HOLLER-iOS.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
 
 Pod::Spec.new do |s|
-  s.name             = 'HOLLER-iOS'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of HOLLER-iOS.'
+s.name             = "HOLLER-iOS"
+s.version          = "0.0.1"
+s.summary          = "SaaS Product aims to empower mobile app."
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+s.description      = "Adding capability to mobile app with Marketing Automation, User Engagement and strong solid Insights Data."
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+s.homepage         = "https://www.appholler.com"
+# s.screenshots     = ""
+s.license          = 'AppHOLLERs Proprietary'
+s.author           = { "Phong Nguyen" => "phong.nguyen@rainmaker-labs.com" }
+s.source           = { :git => "https://github.com/AppHOLLER/Holler-iOS.git", :tag => "0.0.1" }
+s.social_media_url = 'https://www.facebook.com/RainmakerLabs'
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/HOLLER-iOS'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Phong Nguyen' => 'phong.nguyen@rainmaker-labs.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/HOLLER-iOS.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+s.ios.deployment_target = '8.0'
 
-  s.ios.deployment_target = '8.0'
+s.source_files = 'Holler-iOS/Classes/**/*'
+s.resource_bundles = {
+'Holler-iOS' => ['Holler-iOS/Assets/*.png']
+}
 
-  s.source_files = 'HOLLER-iOS/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'HOLLER-iOS' => ['HOLLER-iOS/Assets/*.png']
-  # }
+s.public_header_files = 'Holler-iOS/Classes/Public Header/*.h'
+#s.private_header_files = 'Holler-iOS/Classes/Private Header/*.h'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+s.frameworks = 'UIKit', 'MapKit', 'CoreLocation'
+s.dependency 'AFNetworking', '~> 3.1.0'
 end
