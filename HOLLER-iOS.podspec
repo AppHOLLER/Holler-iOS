@@ -10,7 +10,7 @@ s.homepage         = "https://www.appholler.com"
 # s.screenshots     = ""
 s.license          = 'MIT'
 s.author           = { "Phong Nguyen" => "phong.nguyen@rainmaker-labs.com" }
-s.source           = { :git => "https://github.com/AppHOLLER/Holler-iOS.git", :tag => "0.0.1" }
+s.source           = { :git => "https://github.com/AppHOLLER/Holler-iOS.git", :tag => "0.0.2" }
 s.social_media_url = 'https://www.facebook.com/RainmakerLabs'
 
 s.ios.deployment_target = '8.0'
