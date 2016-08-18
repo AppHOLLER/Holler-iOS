@@ -10,19 +10,19 @@ s.homepage         = "https://www.appholler.com"
 # s.screenshots     = ""
 s.license          = 'MIT'
 s.author           = { "Phong Nguyen" => "phong.nguyen@rainmaker-labs.com" }
-s.source           = { :git => "https://github.com/AppHOLLER/Holler-iOS.git", :tag => "0.0.1" }
+s.source           = { :git => "https://github.com/AppHOLLER/Holler-iOS.git", :tag => "0.0.2" }
 s.social_media_url = 'https://www.facebook.com/RainmakerLabs'
 
 s.ios.deployment_target = '8.0'
 
 # s.resource_bundles = {
-#'HOLLER-iOS' => ['HOLLER-iOS/Assets/*.png']
-#}
+# 'HOLLER-iOS' => ['HOLLER-iOS/Assets/*.png']
+# }
 
 s.source_files = 'HOLLER-iOS/Classes/**/*'
 
-#s.public_header_files = 'HOLLER-iOS/Classes/Public/*.h'
-#s.private_header_files = 'HOLLER-iOS/Classes/Private/*.h'
+#s.public_header_files = '../../HOLLER-iOS/Classes/Public/*.h'
+#s.private_header_files = '../../HOLLER-iOS/HOLLER-iOS/Classes/Private/*.h'
 
 s.frameworks = 'UIKit', 'MapKit', 'CoreLocation'
 s.dependency 'AFNetworking', '~> 3.1.0'
