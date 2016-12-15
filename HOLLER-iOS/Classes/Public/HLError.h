@@ -27,6 +27,12 @@ typedef NS_ENUM(NSUInteger, HLHTTPErrorCode) {
      */
     HL_REQUEST_SUCCEED = 200,
     /*!
+     *  Request has semantically erroneous
+     *
+     *  @since 1.2
+     */
+    HL_SEMANTIC_ERROR = 422,
+    /*!
      *  Request To Removed or Not Existed Resource
      *
      *  @since 0.0.1
@@ -64,6 +70,7 @@ typedef NS_ENUM(NSUInteger, HLHTTPErrorCode) {
     HL_REQUEST_ERROR_UNDEFINED
 };
 
+@class HLError;
 @interface HLError : NSObject
 
 /*!

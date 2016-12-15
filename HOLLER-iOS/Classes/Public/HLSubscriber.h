@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <HLError.h>
+#import <Holler/HLError.h>
 
 /*!
  *  @brief HLSubscriber represents to Subscriber that managed by HOLLER. Each subscriber have an unique device that can receive Push Notification, SMS Email and Email
@@ -184,13 +184,25 @@
  */
 +(void)fetchSubscriberId: (NSNumber *)subscriberId
             onCompletion: (void (^)(BOOL, HLError*, HLSubscriber*))completion NS_AVAILABLE_IOS(8_0);
+    
+/*!
+*  @brief trigger subscriber event by subscriberId. Calling this method as asynchronos callback method
+*
+*  @param subscriberId unique id of subscriber
+*  @param event        event want to be triggered: register / open / login / referral
+*  @param completion   asynchronous block
+*
+*  @since 0.0.1
+*/
++(void)triggerSubscriberEvent: (NSNumber *)subscriberId event:(NSString *)event
+            onCompletion: (void (^)(BOOL, HLError*, HLSubscriber*))completion NS_AVAILABLE_IOS(8_0);
 
 /*!
  *  @brief generate K-V pair casted NSDictionary of information contain demographic targets of subscriber. Note: Subscriber has properties named "gps_longitude" and "gps_latitude". This requires you to enable CoreLocation service to get accurated coordinate of subscriber's device.
  *
  *  @return K-V pair data casted NSDictionary
  *
- *  @since 0.0.1
+ *  @since 1.2
  */
 +(NSDictionary *)generateInformationDictionary NS_AVAILABLE_IOS(8_0);
 

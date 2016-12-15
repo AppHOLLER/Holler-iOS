@@ -7,8 +7,8 @@
 //
 
 #import "HLServiceManager.h"
-#import <HLMiscellaneous.h>
-#import <HLError.h>
+#import <Holler/HLMiscellaneous.h>
+#import <Holler/HLError.h>
 
 #define HOLLER_HTTP_TIMEOUT                     2.5f
 
@@ -73,6 +73,7 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *sessionManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     sessionManager.securityPolicy = [self pinnedSSLCertificate];
+    [sessionManager setResponseSerializer:[AFJSONResponseSerializer serializer]];
     
     NSMutableURLRequest *request;
     

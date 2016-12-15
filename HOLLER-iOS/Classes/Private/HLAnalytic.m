@@ -9,10 +9,10 @@
 #import "HLAnalytic.h"
 
 #import <CoreLocation/CoreLocation.h>
-#import <HLUtility.h>
-#import <HLConstants.h>
-#import <HLServiceManager.h>
-#import <HLMiscellaneous.h>
+#import <Holler/HLUtility.h>
+#import <Holler/HLConstants.h>
+#import <Holler/HLServiceManager.h>
+#import <Holler/HLMiscellaneous.h>
 
 @interface HLAnalytic()<CLLocationManagerDelegate>
 
@@ -23,9 +23,9 @@
 +(instancetype)defaultAnalytic{
     static HLAnalytic *analytic;
     static dispatch_once_t onceToken;
-dispatch_once(&onceToken, ^{
-    analytic = [[HLAnalytic alloc] init];
-});
+    dispatch_once(&onceToken, ^{
+        analytic = [[HLAnalytic alloc] init];
+    });
     return analytic;
 }
 

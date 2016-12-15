@@ -31,6 +31,7 @@
 #define HOLLER_SERVICE_GET_TOTAL_SUBSCRIBER                         @"/subscribers/total/"
 #define HOLLER_SERVICE_REGISTER_SUBSCRIBER                          @"/subscribers/register/"
 #define HOLLER_SERVICE_UPDATE_SUBSCRIBER                            @"/subscribers/%@"
+#define HOLLER_SERVICE_TRIGGER_EVENT                                @"/subscribers/%@/events/"
 
 //Gender
 #define HOLLER_SERVICE_GET_LIST_GENDER                              @"/target/?content_type=gender"
@@ -122,11 +123,8 @@
 #define TARGET_KEY                                                  @"key"
 
 #define TARGET_IS_DEVICE                                            @"device"
-#define TARGET_IS_COUNTRY                                           @"country"
+#define TARGET_IS_NATIONALITY                                       @"country"
 #define TARGET_IS_LOCATION                                          @"location"
-#define TARGET_IS_DESIGNATION                                       @"designation"
-#define TARGET_IS_INTEREST                                          @"interest"
-#define TARGET_IS_INDUSTRY                                          @"industry"
 #define TARGET_IS_GENDER                                            @"gender"
 
 #define TARGET_INDUSTRY_NAME                                        @"industry_name"

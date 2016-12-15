@@ -7,7 +7,7 @@
 //
 
 #import "HLError.h"
-#import <HLConstants.h>
+#import <Holler/HLConstants.h>
 
 @implementation HLError
 
@@ -37,6 +37,10 @@
     switch (errorCode) {
         case 500:
             return HL_SERVER_ERROR;
+            break;
+        
+        case 422:
+            return HL_SEMANTIC_ERROR;
             break;
             
         case 400:

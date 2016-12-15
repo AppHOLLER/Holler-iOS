@@ -7,8 +7,8 @@
 //
 
 #import "HLMiscellaneous.h"
-#import <HLSubscriber.h>
-#import <HLConstants.h>
+#import <Holler/HLSubscriber.h>
+#import <Holler/HLConstants.h>
 
 @interface HLMiscellaneous()
 
@@ -17,7 +17,8 @@
 @implementation HLMiscellaneous
 
 +(NSString *)perceiveAPI:(NSString *)request{
-    return [NSString stringWithFormat:@"%@%@", HOLLER_LIVED, request];
+    //return [NSString stringWithFormat:@"%@%@", HOLLER_LIVED, request];
+    return [NSString stringWithFormat:@"http://dev-holler.rmlbs.co/api/v2%@", request];
 }
 
 +(void)perceiveCredentials: (nonnull NSString *)appId accessId: (nonnull NSString *)accessId{
@@ -52,14 +53,19 @@
 
 #pragma mark - Subscriber Manipulation
 +(NSDictionary *)deserialiseSubscriber: (HLSubscriber*)subscriber{
-    return @{SUBSCRIBER_USERNAME: subscriber.subscriberUsername,
-             SUBSCRIBER_DEVICE_TOKEN: !subscriber.subscriberDeviceToken?[HollerUserDefaults objectForKey:HLDeviceToken]:subscriber.subscriberDeviceToken,
-             SUBSCRIBER_DEVICE_TYPE: @"ios",
-             SUBSCRIBER_EMAIL_ADDRESS: subscriber.subscriberEmail,
-             SUBSCRIBER_FIRSTNAME: subscriber.subscriberFirstName,
-             SUBSCRIBER_LASTNAME: subscriber.subscriberLastName,
-             SUBSCRIBER_CELLPHONE_NUMBER: subscriber.subscriberCellphoneNumber,
-             SUBSCRIBER_INFORMATION: subscriber.subscriberInformations};
+    NSString *deviceToken = [HollerUserDefaults objectForKey:HLDeviceToken];
+    if (deviceToken != nil) {
+        return @{SUBSCRIBER_USERNAME: subscriber.subscriberUsername,
+                 SUBSCRIBER_DEVICE_TOKEN: !subscriber.subscriberDeviceToken?deviceToken:subscriber.subscriberDeviceToken,
+                 SUBSCRIBER_DEVICE_TYPE: @"ios",
+                 SUBSCRIBER_EMAIL_ADDRESS: subscriber.subscriberEmail,
+                 SUBSCRIBER_FIRSTNAME: subscriber.subscriberFirstName,
+                 SUBSCRIBER_LASTNAME: subscriber.subscriberLastName,
+                 SUBSCRIBER_CELLPHONE_NUMBER: subscriber.subscriberCellphoneNumber,
+                 SUBSCRIBER_INFORMATION: subscriber.subscriberInformations};
+    } else {
+        return @{@"" : @""};
+    }
 }
 
 +(NSData *)deserialiseSubscriberToData:(HLSubscriber *)subscriber error:(NSError *__autoreleasing *)error{
