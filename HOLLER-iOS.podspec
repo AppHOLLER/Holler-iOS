@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
 s.name             = "HOLLER-iOS"
-s.version          = "0.0.2"
+s.version          = "1.2"
 s.summary          = "SaaS Product aims to empower mobile app."
 
 s.description      = "Adding capability to mobile app with Marketing Automation, User Engagement and strong solid Insights Data."
@@ -10,7 +10,7 @@ s.homepage         = "https://www.appholler.com"
 # s.screenshots     = ""
 s.license          = 'MIT'
 s.author           = { "Phong Nguyen" => "phong.nguyen@rainmaker-labs.com" }
-s.source           = { :git => "https://github.com/AppHOLLER/Holler-iOS.git", :tag => "0.0.2" }
+s.source           = { :git => "https://github.com/AppHOLLER/Holler-iOS.git", :tag => "1.2" }
 s.social_media_url = 'https://www.facebook.com/RainmakerLabs'
 
 s.ios.deployment_target = '8.0'
