@@ -7,10 +7,10 @@
 //
 
 #import "Holler.h"
-#import <Holler/HLConstants.h>
-#import <Holler/HLServiceManager.h>
-#import <Holler/HLMiscellaneous.h>
-#import <Holler/HLAnalytic.h>
+#import "HLConstants.h"
+#import "HLServiceManager.h"
+#import "HLMiscellaneous.h"
+#import "HLAnalytic.h"
 
 @implementation Holler
 

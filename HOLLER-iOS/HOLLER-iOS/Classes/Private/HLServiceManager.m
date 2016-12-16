@@ -7,8 +7,8 @@
 //
 
 #import "HLServiceManager.h"
-#import <Holler/HLMiscellaneous.h>
-#import <Holler/HLError.h>
+#import "HLMiscellaneous.h"
+#import "HLError.h"
 
 #define HOLLER_HTTP_TIMEOUT                     2.5f
 

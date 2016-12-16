@@ -7,10 +7,10 @@
 //
 
 #import "HLSubscriber.h"
-#import <Holler/HLUtility.h>
-#import <Holler/HLServiceManager.h>
-#import <Holler/HLConstants.h>
-#import <Holler/HLMiscellaneous.h>
+#import "HLUtility.h"
+#import "HLServiceManager.h"
+#import "HLConstants.h"
+#import "HLMiscellaneous.h"
 
 @implementation HLSubscriber
 

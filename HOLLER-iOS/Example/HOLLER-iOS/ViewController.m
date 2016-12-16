@@ -12,7 +12,7 @@
 
 @end
 
-@implementation .hViewController
+@implementation ViewController
 
 - (void)viewDidLoad
 {

@@ -1,10 +1,26 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - HOLLER-iOS (0.1.0)
+  - HOLLER-iOS (1.2):
+    - AFNetworking (~> 3.1.0)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -15,8 +31,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  HOLLER-iOS: 05470dcb53daa1824aefc2e5c9cf61eeafcc8567
+  HOLLER-iOS: 261d4bef60d81384aa63377f4bdd326348412e5c
 
 PODFILE CHECKSUM: d779946dbcafbc83dbd809d6c7c280853c79934c
 

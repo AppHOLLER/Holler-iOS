@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import <Holler/HLError.h>
+#import "HLError.h"
 
 @interface Holler : NSObject
 
