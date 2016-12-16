@@ -9,11 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import <HLError.h>
-#import <HLPush.h>
-#import <HLAnalytic.h>
-#import <HLTarget.h>
-#import <HLSubscriber.h>
+#import <Holler/HLError.h>
 
 @interface Holler : NSObject
 
@@ -55,7 +51,7 @@
  *
  *  @since 0.0.1
  */
-+(void)applicationDidBecomeActive: (UIApplication *)application;
++(void)applicationWillBecomeActive: (UIApplication *)application;
 
 /*!
  *  @brief address didReceiveRemoteNotification to begin analytic process, HOLLER retrieve insight data and content to track your user
@@ -73,6 +69,6 @@
  *
  *  @since 0.0.1
  */
-+(void)didRegisterForRemoteNotificationWithDeviceToken: (NSData *)deviceToken;
++(void)didRegisterRemoteNotificationWithDeviceToken: (NSData *)deviceToken;
 
 @end

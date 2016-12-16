@@ -7,10 +7,10 @@
 //
 
 #import "Holler.h"
-#import <HLConstants.h>
-#import <HLServiceManager.h>
-#import <HLMiscellaneous.h>
-#import <HLAnalytic.h>
+#import <Holler/HLConstants.h>
+#import <Holler/HLServiceManager.h>
+#import <Holler/HLMiscellaneous.h>
+#import <Holler/HLAnalytic.h>
 
 @implementation Holler
 
@@ -38,13 +38,13 @@
     [[HLAnalytic defaultAnalytic] trackClosedUsageFromNowOnCompletion:nil];
 }
 
-+(void)applicationDidBecomeActive:(UIApplication *)application{
++(void)applicationWillBecomeActive:(UIApplication *)application{
     [[HLAnalytic defaultAnalytic] trackOpenedUsageFromNowOnCompletion:nil];
 }
 
 
 //Remote Notification Handler
-+(void)didRegisterForRemoteNotificationWithDeviceToken:(NSData *)deviceToken{
++(void)didRegisterRemoteNotificationWithDeviceToken:(NSData *)deviceToken{
     [HLMiscellaneous perceiveDeviceToken:deviceToken];
 }
 
