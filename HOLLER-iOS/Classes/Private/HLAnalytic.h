@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Holler/HLError.h>
+#import "HLError.h"
 
 extern NSString *deviceOS;
 extern NSString *trackedRemark;
