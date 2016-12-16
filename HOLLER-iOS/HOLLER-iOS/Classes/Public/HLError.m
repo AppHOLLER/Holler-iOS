@@ -7,6 +7,7 @@
 //
 
 #import "HLError.h"
+#import "HLConstants.h"
 
 @implementation HLError
 

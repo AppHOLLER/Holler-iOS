@@ -8,7 +8,7 @@
 
 FOUNDATION_EXPORT double Holler_iOS_SDKVersionNumber = 1.2;
 
-#import <Holler/Holler.h>
-#import <Holler/HLError.h>
-#import <Holler/HLSegment.h>
-#import <Holler/HLSubscriber.h>
+#import "Holler.h"
+#import "HLError.h"
+#import "HLSegment.h"
+#import "HLSubscriber.h"

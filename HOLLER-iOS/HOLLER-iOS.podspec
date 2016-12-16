@@ -21,8 +21,8 @@ s.ios.deployment_target = '8.0'
 
 s.source_files = 'HOLLER-iOS/Classes/**/*'
 
-#s.public_header_files = 'HOLLER-iOS/Classes/Public/*.h'
-#s.private_header_files = 'HOLLER-iOS/Classes/Private/*.h'
+# s.public_header_files = 'HOLLER-iOS/Classes/Public/*.h'
+# s.private_header_files = 'HOLLER-iOS/Classes/Private/*.h'
 
 s.frameworks = 'UIKit', 'MapKit', 'CoreLocation'
 s.dependency 'AFNetworking', '~> 3.1.0'

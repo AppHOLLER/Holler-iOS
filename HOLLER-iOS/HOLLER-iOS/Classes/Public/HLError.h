@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HLConstants.h"
 
 /*!
  *  @brief HOLLER SDK specifies ERROR Code that return from HOLLER server

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Holler/Holler.h>
 #import "HLError.h"
 
 extern NSString *deviceOS;
