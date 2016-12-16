@@ -8,7 +8,10 @@ s.description      = "Adding capability to mobile app with Marketing Automation,
 
 s.homepage         = "https://www.appholler.com"
 # s.screenshots     = ""
-s.license          = 'MIT'
+s.license = { :type => 'MIT', :text => <<-LICENSE
+                   Copyright 2016 Rainmaker-Labs
+                 LICENSE
+               }
 s.author           = { "Phong Nguyen" => "phong.nguyen@rainmaker-labs.com" }
 s.source           = { :git => "https://github.com/AppHOLLER/Holler-iOS.git", :tag => "1.2" }
 s.social_media_url = 'https://www.facebook.com/RainmakerLabs'
@@ -19,7 +22,7 @@ s.ios.deployment_target = '8.0'
 #'HOLLER-iOS' => ['HOLLER-iOS/Assets/*.png']
 #}
 
-s.source_files = 'HOLLER-iOS/Classes/**/*'
+s.source_files = 'HOLLER-iOS/HOLLER-iOS/Classes/*.{h,m}'
 
 # s.public_header_files = 'HOLLER-iOS/Classes/Public/*.h'
 # s.private_header_files = 'HOLLER-iOS/Classes/Private/*.h'
