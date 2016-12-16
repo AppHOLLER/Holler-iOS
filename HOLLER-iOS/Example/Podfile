@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HOLLER-iOS_Example' do
+  pod 'HOLLER-iOS', :path => '../'
+
+  target 'HOLLER-iOS_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end

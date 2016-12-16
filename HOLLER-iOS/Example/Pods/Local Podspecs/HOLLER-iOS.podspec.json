@@ -1,0 +1,22 @@
+{
+  "name": "HOLLER-iOS",
+  "version": "0.1.0",
+  "summary": "A short description of HOLLER-iOS.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/HOLLER-iOS",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "KhuongPham": "khuong.pham@rainmaker-labs.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/HOLLER-iOS.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "HOLLER-iOS/Classes/**/*"
+}

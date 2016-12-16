@@ -1,0 +1,23 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - HOLLER-iOS (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - HOLLER-iOS (from `../`)
+
+EXTERNAL SOURCES:
+  HOLLER-iOS:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  HOLLER-iOS: 05470dcb53daa1824aefc2e5c9cf61eeafcc8567
+
+PODFILE CHECKSUM: d779946dbcafbc83dbd809d6c7c280853c79934c
+
+COCOAPODS: 1.1.1

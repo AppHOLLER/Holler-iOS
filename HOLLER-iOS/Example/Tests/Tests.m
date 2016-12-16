@@ -2,8 +2,8 @@
 //  HOLLER-iOSTests.m
 //  HOLLER-iOSTests
 //
-//  Created by Phong Nguyen on 07/20/2016.
-//  Copyright (c) 2016 Phong Nguyen. All rights reserved.
+//  Created by KhuongPham on 12/16/2016.
+//  Copyright (c) 2016 KhuongPham. All rights reserved.
 //
 
 @import XCTest;

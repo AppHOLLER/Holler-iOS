@@ -1,0 +1,6 @@
+framework module HOLLER_iOS {
+  umbrella header "HOLLER-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
