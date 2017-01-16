@@ -51,7 +51,7 @@
  *
  *  @since 0.0.1
  */
-+(void)applicationWillBecomeActive: (UIApplication *)application;
++(void)applicationDidBecomeActive: (UIApplication *)application;
 
 /*!
  *  @brief address didReceiveRemoteNotification to begin analytic process, HOLLER retrieve insight data and content to track your user
@@ -69,6 +69,6 @@
  *
  *  @since 0.0.1
  */
-+(void)didRegisterRemoteNotificationWithDeviceToken: (NSData *)deviceToken;
++(void)didRegisterForRemoteNotificationWithDeviceToken: (NSData *)deviceToken;
 
 @end

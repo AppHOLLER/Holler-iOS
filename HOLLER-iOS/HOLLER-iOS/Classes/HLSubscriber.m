@@ -18,9 +18,13 @@
 +(void)fetchListSubscriberOnCompletion:(void (^)(BOOL, HLError*, NSArray *))completion{
     [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_GET_ALL_SUBSCRIBER method:HL_HTTP_GET params:nil onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject){
         if(error){
-            completion(NO, errorObject, nil);
+            if (completion) {
+                completion(NO, errorObject, nil);
+            }
         }else{
-            completion(YES, nil, [[[HLSubscriber alloc] init] iterateWithJsonData:responseObject]);
+            if (completion) {
+                completion(YES, nil, [[[HLSubscriber alloc] init] iterateWithJsonData:responseObject]);
+            }
         }
     }];
 }
@@ -29,15 +33,22 @@
     
     [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_GET_TOTAL_SUBSCRIBER method:HL_HTTP_GET params:nil onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject){
         if(error){
-            completion(NO, errorObject, 0);
+            if (completion) {
+                completion(NO, errorObject, 0);
+            }
         }else{
-            completion(YES, errorObject, [[[HLSubscriber alloc] init] iterateOnTotalSubscriber:responseObject]);
+            if (completion) {
+                completion(YES, errorObject, [[[HLSubscriber alloc] init] iterateOnTotalSubscriber:responseObject]);
+            }
         }
     }];
 }
 
 +(void)fetchSubscriberId:(NSNumber *)subscriberId onCompletion:(void (^)(BOOL, HLError*, HLSubscriber*))completion{
     [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_UPDATE_SUBSCRIBER method:HL_HTTP_GET objectId:[subscriberId stringValue] onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject){
+        if (!completion) {
+            return ;
+        }
         if(error){
             completion(NO, errorObject, nil);
         }else{
@@ -50,6 +61,9 @@
     NSDictionary *param = [[NSDictionary alloc] init];
     param = @{ @"event" : event};
     [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_TRIGGER_EVENT method:HL_HTTP_POST objectId:[subscriberId stringValue] params:param onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject) {
+        if (!completion) {
+            return ;
+        }
         if(error){
             completion(NO, errorObject, nil);
         }else{
@@ -81,16 +95,22 @@
 }
 
 -(void)updateBySubscriberIdSilently:(NSNumber *)subscriberId{
-    [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_UPDATE_SUBSCRIBER method:HL_HTTP_PUT params:[HLMiscellaneous deserialiseSubscriber:self] onCompletion:nil];
+//    [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_UPDATE_SUBSCRIBER method:HL_HTTP_PUT params:[HLMiscellaneous deserialiseSubscriber:self] onCompletion:nil];
+    NSString *url = [NSString stringWithFormat:HOLLER_SERVICE_UPDATE_SUBSCRIBER,[subscriberId stringValue]];
+    [[HLServiceManager standardManager] executeRESTRequestWithCredential:url method:HL_HTTP_PUT params:[HLMiscellaneous deserialiseSubscriber:self] onCompletion:nil];
 }
 
 -(void)updateBySubscriberId:(NSNumber *)subscriberId onCompletion:(void (^)(BOOL, HLError*))completion{
     NSDictionary *param = [HLMiscellaneous deserialiseSubscriber:self];
     [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_UPDATE_SUBSCRIBER method:HL_HTTP_PUT objectId:[subscriberId stringValue] params:param onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject){
         if(error){
-            completion(NO, errorObject);
+            if (completion) {
+                completion(NO, errorObject);
+            }
         }else{
-            completion(YES, nil);
+            if (completion) {
+                completion(YES, nil);
+            }
         }
     }];
 }
@@ -98,9 +118,13 @@
 -(void)registerSubscriberOnCompletion:(void (^)(BOOL, HLError*, NSNumber*))completion{
     [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_REGISTER_SUBSCRIBER method:HL_HTTP_POST objectId:nil params:[HLMiscellaneous deserialiseSubscriber:self] onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject){
         if(error){
-            completion(NO, errorObject, nil);
+            if (completion) {
+                completion(NO, errorObject, nil);
+            }
         }else{
-            completion(YES, nil, [self iterateSubscriberId:responseObject]);
+            if (completion) {
+                completion(YES, nil, [self iterateSubscriberId:responseObject]);
+            }
         }
     }];
 }

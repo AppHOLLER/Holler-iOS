@@ -38,13 +38,13 @@
     [[HLAnalytic defaultAnalytic] trackClosedUsageFromNowOnCompletion:nil];
 }
 
-+(void)applicationWillBecomeActive:(UIApplication *)application{
++(void)applicationDidBecomeActive:(UIApplication *)application{
     [[HLAnalytic defaultAnalytic] trackOpenedUsageFromNowOnCompletion:nil];
 }
 
 
 //Remote Notification Handler
-+(void)didRegisterRemoteNotificationWithDeviceToken:(NSData *)deviceToken{
++(void)didRegisterForRemoteNotificationWithDeviceToken:(NSData *)deviceToken{
     [HLMiscellaneous perceiveDeviceToken:deviceToken];
 }
 

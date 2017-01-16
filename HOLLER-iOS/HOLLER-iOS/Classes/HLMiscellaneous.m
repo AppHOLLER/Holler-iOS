@@ -17,8 +17,7 @@
 @implementation HLMiscellaneous
 
 +(NSString *)perceiveAPI:(NSString *)request{
-    //return [NSString stringWithFormat:@"%@%@", HOLLER_LIVED, request];
-    return [NSString stringWithFormat:@"http://dev-holler.rmlbs.co/api/v2%@", request];
+    return [NSString stringWithFormat:@"%@%@", HOLLER_LIVED, request];
 }
 
 +(void)perceiveCredentials: (nonnull NSString *)appId accessId: (nonnull NSString *)accessId{
@@ -28,7 +27,7 @@
 
 +(NSDictionary *)perceiveHeaderCredential{
     return @{@"HOLLER-APP-ID" : [HollerUserDefaults objectForKey:HOLLERAppId],
-             @"Holler-Access-Key" : [HollerUserDefaults objectForKey:HOLLERAccessId]
+             @"HOLLER-ACCESS-KEY" : [HollerUserDefaults objectForKey:HOLLERAccessId]
              };
 }
 

@@ -72,7 +72,7 @@
 -(void)executeRESTRequest:(NSString *)HTTPRequest method:(HLHTTPMethod)method params:(NSDictionary *)params headers:(NSDictionary *)headers onCompletion:(void (^)(BOOL, NSError*, HLError*, id))completion{
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *sessionManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    sessionManager.securityPolicy = [self pinnedSSLCertificate];
+//    sessionManager.securityPolicy = [self pinnedSSLCertificate];
     [sessionManager setResponseSerializer:[AFJSONResponseSerializer serializer]];
     
     NSMutableURLRequest *request;
@@ -82,9 +82,14 @@
     
     NSURLSessionDataTask *dataTask = [sessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error){
         if(error){
-            completion(NO, error, [[HLError alloc] initWithJsonData:responseObject],nil);
+            if (completion) {
+                completion(NO, error, [[HLError alloc] initWithJsonData:responseObject],nil);
+            }
+            
         }else{
-            completion(YES, nil, nil, responseObject);
+            if (completion) {
+                completion(YES, nil, nil, responseObject);
+            }
         }
     }];
     
@@ -102,9 +107,14 @@
     
     NSURLSessionUploadTask *uploadTask = [sessionManager uploadTaskWithRequest:request fromData:data progress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error){
         if(error){
-            completion(NO, error, [[HLError alloc] initWithJsonData:responseObject], nil);
+            if (completion) {
+                completion(NO, error, [[HLError alloc] initWithJsonData:responseObject], nil);
+            }
+            
         }else{
-            completion(YES, nil, nil, responseObject);
+            if (completion) {
+                completion(YES, nil, nil, responseObject);
+            }
         }
     }];
     

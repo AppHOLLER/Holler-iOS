@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
 s.name             = "HOLLER-iOS"
-s.version          = "1.2"
+s.version          = "1.2.1"
 s.summary          = "SaaS Product aims to empower mobile app."
 
 s.description      = "Adding capability to mobile app with Marketing Automation, User Engagement and strong solid Insights Data."
@@ -12,8 +12,8 @@ s.license = { :type => 'MIT', :text => <<-LICENSE
                    Copyright 2016 Rainmaker-Labs
                  LICENSE
                }
-s.author           = { "Phong Nguyen" => "phong.nguyen@rainmaker-labs.com" }
-s.source           = { :git => "https://github.com/AppHOLLER/Holler-iOS.git", :tag => "1.2" }
+s.author           = { 'Trung Võ' => 'trung.vo@rainmaker-labs.com' }
+s.source           = { :git => "https://github.com/AppHOLLER/Holler-iOS.git", :tag => "1.2.1" }
 s.social_media_url = 'https://www.facebook.com/RainmakerLabs'
 
 s.ios.deployment_target = '8.0'
@@ -22,7 +22,7 @@ s.ios.deployment_target = '8.0'
 #'HOLLER-iOS' => ['HOLLER-iOS/Assets/*.png']
 #}
 
-s.source_files = 'HOLLER-iOS/HOLLER-iOS/Classes/*.{h,m}'
+s.source_files = 'HOLLER-iOS/HOLLER-iOS/Classes/**/*'
 
 # s.public_header_files = 'HOLLER-iOS/Classes/Public/*.h'
 # s.private_header_files = 'HOLLER-iOS/Classes/Private/*.h'

@@ -98,7 +98,7 @@
  *
  *  @since 0.0.1
  */
-@property(nonatomic, weak) NSDictionary *subscriberInformations;
+@property(nonatomic, strong) NSDictionary *subscriberInformations;
 
 /*!
  *  @brief initialise blank HLSubscriber instance

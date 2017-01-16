@@ -9,6 +9,7 @@
 #import "HLAnalytic.h"
 
 #import <CoreLocation/CoreLocation.h>
+#import "HLUtility.h"
 #import "HLConstants.h"
 #import "HLServiceManager.h"
 #import "HLMiscellaneous.h"
@@ -33,10 +34,14 @@
     
     [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_ANALYTIC_TIME_SPENT method:HL_HTTP_POST params:payload onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject){
         if(error){
-            completion(NO, errorObject);
+            if (completion) {
+                completion(NO, errorObject);
+            }
             NSLog(@"Error occurs while execute tracking app usage - Open");
         }else{
-            completion(YES, nil);
+            if (completion) {
+                completion(YES, nil);
+            }
             NSLog(@"App Opened Tracked");
         }
     }];
@@ -51,10 +56,14 @@
     
     [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_ANALYTIC_TIME_SPENT method:HL_HTTP_POST params:payload onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject){
         if(error){
-            completion(NO, errorObject);
+            if (completion) {
+                completion(NO, errorObject);
+            }
             NSLog(@"Error occurs while execute tracking app usage - Close");
         }else{
-            completion(YES, nil);
+            if (completion) {
+                completion(YES, nil);
+            }
             NSLog(@"App Closed Tracked");
         }
     }];

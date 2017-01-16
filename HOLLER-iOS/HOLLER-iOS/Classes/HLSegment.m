@@ -7,9 +7,7 @@
 //
 
 #import "HLSegment.h"
-//#import <Holler/HLConstants.h>
 #import "HLConstants.h"
-//#import <Holler/HLServiceManager.h>
 #import "HLServiceManager.h"
 
 @implementation HLSegment
@@ -18,15 +16,24 @@
 +(void)fetchListNationalitySegmentOnCompletion:(void (^)(BOOL, HLError* _Nullable, NSArray * _Nullable))completion{
     [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_GET_LIST_COUNTRY method:HL_HTTP_GET params:nil onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject){
         if(error){
-            completion(NO, errorObject, nil);
+            if (completion) {
+                completion(NO, errorObject, nil);
+            }
+            
         }else{
-            completion(YES, nil, [[HLSegment alloc] iterateOnSegmentKindNationality:responseObject]);
+            if (completion) {
+                completion(YES, nil, [[HLSegment alloc] iterateOnSegmentKindNationality:responseObject]);
+            }
         }
     }];
 }
 
 +(void)fetchListGenderSegmentOnCompletion:(void (^)(BOOL, HLError* _Nullable, NSArray * _Nullable))completion{
     [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_GET_LIST_GENDER method:HL_HTTP_GET params:nil onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject){
+        if (!completion) {
+            return;
+        }
+        
         if(error){
             completion(NO, errorObject, nil);
         }else{
@@ -37,6 +44,10 @@
 
 +(void)fetchListDeviceSegmentOnCompletion:(void (^)(BOOL, HLError* _Nullable, NSArray * _Nullable))completion{
     [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_GET_LIST_DEVICE method:HL_HTTP_GET params:nil onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject){
+        if (!completion) {
+            return;
+        }
+        
         if(error){
             completion(NO, errorObject, nil);
         }else{
