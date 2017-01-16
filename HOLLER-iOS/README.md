@@ -22,7 +22,7 @@ pod "HOLLER-iOS"
 
 ## Author
 
-KhuongPham, khuong.pham@rainmaker-labs.com
+TrungVo, trung.vo@rainmaker-labs.com
 
 ## License
 
