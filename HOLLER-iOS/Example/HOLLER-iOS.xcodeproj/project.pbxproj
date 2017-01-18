@@ -57,6 +57,7 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		846F16FF1E2F075F00670548 /* HOLLER_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HOLLER_iOS.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/HOLLER-iOS-byuppomroexsufgbyklwaivwuhnz/Build/Products/Debug-iphonesimulator/HOLLER-iOS/HOLLER_iOS.framework"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		87779A301CD477941A942E0A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B3EAEF531C0E798CF55B2A50 /* Pods-HOLLER-iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HOLLER-iOS_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HOLLER-iOS_Tests/Pods-HOLLER-iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				846F16FF1E2F075F00670548 /* HOLLER_iOS.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -247,6 +249,17 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = KhuongPham;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = SWTS8GVE5B;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
