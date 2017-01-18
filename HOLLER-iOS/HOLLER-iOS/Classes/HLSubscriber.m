@@ -140,6 +140,8 @@
     self = [super init];
     if(self){
         //initialisation phrase
+        NSString* deviceToken = [HollerUserDefaults objectForKey:HLDeviceToken];
+        deviceToken ? [self setSubscriberDeviceToken:deviceToken] : nil;
     }
     return self;
 }
