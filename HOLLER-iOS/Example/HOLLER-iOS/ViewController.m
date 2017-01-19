@@ -23,12 +23,72 @@
     
    
 }
+- (IBAction)updateSubscriberId:(id)sender {
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)triggerSubscriberEvent:(id)sender {
+    [HLSubscriber triggerSubscriberEvent:@6517 event:@"register" onCompletion:^(BOOL success, HLError * error, HLSubscriber * subscriber) {
+        if (error) {
+            //handle error object with description and error status
+            NSLog(@"Error");
+        } else {
+            //succeed. subscriberId'll returned back
+            NSLog(@"Success");
+        }
+    }];
+}
+
+- (IBAction)totalSubscribers:(id)sender {
+    [HLSubscriber fetchTotalSubscriberOnCompletion:^(BOOL success, HLError *error, NSUInteger total) {
+        if (error) {
+            //handle error object with description and error status
+            NSLog(@"Error");
+        } else {
+            //succeed. subscriberId'll returned back
+            NSLog(@"Success! Total: %lu", (unsigned long)total);
+        }
+    }];
+}
+
+- (IBAction)fetchSubscriberId:(id)sender {
+    [HLSubscriber fetchSubscriberId:@6517 onCompletion:^(BOOL success, HLError *error, HLSubscriber *subscriber) {
+        if (error) {
+            //handle error object with description and error status
+            NSLog(@"Error");
+        } else {
+            //succeed. subscriberId'll returned back
+            NSLog(@"Success");
+            [subscriber updateBySubscriberId:@6517 onCompletion:^(BOOL success, HLError * error) {
+                if (error) {
+                    //handle error object with description and error status
+                    NSLog(@"Error");
+                } else {
+                    //succeed. subscriberId'll returned back
+                    NSLog(@"Success");
+                }
+            }];
+        }
+    }];
+}
+
+- (IBAction)fetchListSubscriber:(id)sender {
+    
+    [HLSubscriber fetchListSubscriberOnCompletion:^(BOOL success, HLError * error, NSArray * subscribers) {
+        
+        if (error) {
+            //handle error object with description and error status
+            NSLog(@"Error");
+        } else {
+            //succeed. subscriberId'll returned back
+            NSInteger count = [subscribers count];
+            NSLog(@"Success");
+        }
+        
+    }];
+    
+}
+
 - (IBAction)regristerPushNotification:(UIButton *)sender {
     HLSubscriber *subscriber = [[HLSubscriber alloc] init];
     [subscriber setSubscriberFirstName:@"rain"];

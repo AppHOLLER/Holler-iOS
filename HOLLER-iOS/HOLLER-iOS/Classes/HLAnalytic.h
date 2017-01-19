@@ -115,24 +115,6 @@ typedef NS_ENUM(NSUInteger, HLLogLevel){
                                 onCompletion: (void (^)(BOOL succeed, HLError *error))completion NS_AVAILABLE_IOS(8_0);
 
 /*!
- *  @brief track event app is active silently. Doesn't provide callback block, this will be executed silently
- *
- *  @param subscriberId unique id of subscribes who already register and managed by HOLLER
- *
- *  @since 0.0.1
- */
--(void)trackOpenedUsageFromNowSilentlyBySubscriberId: (NSNumber *)subscriberId NS_AVAILABLE_IOS(8_0);
-
-/*!
- *  @brief track event app is inactive/terminated silently. Doesn't provide callback block, this will be executed silently
- *
- *  @param subscriberId unique id of subscriber who already register and managed by HOLLER
- *
- *  @since 0.0.1
- */
--(void)trackClosedUsageFromNowSilentlyBySubscriberId: (NSNumber *)subscriberId NS_AVAILABLE_IOS(8_0);
-
-/*!
  *  @brief track event app is active. To call this method, you must guarantee current device of subscriber was registered already before and subscriber must register for event Subscriber register. Unless exception will throw back
  *
  *  @param completion asynchronous block
@@ -150,18 +132,5 @@ typedef NS_ENUM(NSUInteger, HLLogLevel){
  */
 -(void)trackClosedUsageFromNowOnCompletion: (void (^)(BOOL succeed, HLError *error))completion NS_AVAILABLE_IOS(8_0);
 
-/*!
- *  @brief track event app is active. Too call this method you must guarantee current device of subscriber was registered already before and subscriber must register for event Subscriber register. Unless exception will throw back
- *
- *  @since 0.0.1
- */
--(void)trackOpenedUsageFromNowSilently;
-
-/*!
- *  @brief track event app is inactive/terminated. Too call this method you must guarantee current device of subscriber was registered already before and subscriber must register for event Subscriber register. Unless exception will throw back
- *
- *  @since 0.0.1
- */
--(void)trackClosedUsageFromNowSilently;
 
 @end

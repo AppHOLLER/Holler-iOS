@@ -57,7 +57,7 @@
     }];
 }
     
-+(void)triggerSubscriberEvent:(NSNumber *)subscriberId event:(NSDictionary *)event onCompletion:(void (^)(BOOL, HLError *, HLSubscriber *))completion{
++(void)triggerSubscriberEvent:(NSNumber *)subscriberId event:(NSDictionary *)event onCompletion:(void (^)(BOOL, HLError *))completion{
     NSDictionary *param = [[NSDictionary alloc] init];
     param = @{ @"event" : event};
     [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_TRIGGER_EVENT method:HL_HTTP_POST objectId:[subscriberId stringValue] params:param onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject) {
@@ -65,9 +65,9 @@
             return ;
         }
         if(error){
-            completion(NO, errorObject, nil);
+            completion(NO, errorObject);
         }else{
-            completion(YES, nil, [[HLSubscriber alloc] initWithJsonData:responseObject]);
+            completion(YES, nil);
         }
     }];
 }
@@ -92,12 +92,6 @@
              @"industry": industry,
              @"designation": designation,
              @"interest_id": interestId};
-}
-
--(void)updateBySubscriberIdSilently:(NSNumber *)subscriberId{
-//    [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_UPDATE_SUBSCRIBER method:HL_HTTP_PUT params:[HLMiscellaneous deserialiseSubscriber:self] onCompletion:nil];
-    NSString *url = [NSString stringWithFormat:HOLLER_SERVICE_UPDATE_SUBSCRIBER,[subscriberId stringValue]];
-    [[HLServiceManager standardManager] executeRESTRequestWithCredential:url method:HL_HTTP_PUT params:[HLMiscellaneous deserialiseSubscriber:self] onCompletion:nil];
 }
 
 -(void)updateBySubscriberId:(NSNumber *)subscriberId onCompletion:(void (^)(BOOL, HLError*))completion{
@@ -128,12 +122,6 @@
         }
     }];
 }
-
--(void)registerSubscriberSilently{
-    [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_REGISTER_SUBSCRIBER method:HL_HTTP_POST objectId:nil params:[HLMiscellaneous deserialiseSubscriber:self] onCompletion:nil];
-}
-
-
 
 #pragma mark - Class Lifecycle
 -(instancetype)init{

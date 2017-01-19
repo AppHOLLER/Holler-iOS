@@ -47,10 +47,6 @@
     }];
 }
 
--(void)trackOpenedUsageFromNowSilently{
-    [self trackOpenedUsageFromNowOnCompletion:nil];
-}
-
 -(void)trackClosedUsageFromNowOnCompletion:(void (^)(BOOL, HLError *))completion{
     NSDictionary *payload = [HLMiscellaneous serialiseTrackingTimeSpentPayloadOfCurrentSubscriberFromCurrentByStatus:@"close" coordinate:[self getCurrentLocation]];
     
@@ -69,10 +65,6 @@
     }];
 }
 
--(void)trackClosedUsageFromNowSilently{
-    [self trackClosedUsageFromNowOnCompletion:nil];
-}
-
 -(void)trackOpenedUsageFromNowBySubscriberId:(NSNumber *)subscriberId onCompletion:(void (^)(BOOL, HLError *))completion{
     NSDictionary *payload = [HLMiscellaneous serialiseTrackingTimeSpentPayloadFromCurrentWithSubscriberId:subscriberId status:@"open" coordinate:[self getCurrentLocation]];
     
@@ -85,11 +77,6 @@
     }];
 }
 
--(void)trackOpenedUsageFromNowSilentlyBySubscriberId:(NSNumber *)subscriberId{
-    NSDictionary *payload = [HLMiscellaneous serialiseTrackingTimeSpentPayloadFromCurrentWithSubscriberId:subscriberId status:@"open" coordinate:[self getCurrentLocation]];
-    [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_ANALYTIC_TIME_SPENT method:HL_HTTP_POST params:payload onCompletion:nil];
-}
-
 -(void)trackClosedUsageFromNowBySubscriberId:(NSNumber *)subscriberId onCompletion:(void (^)(BOOL, HLError *))completion{
     NSDictionary *payload = [HLMiscellaneous serialiseTrackingTimeSpentPayloadFromCurrentWithSubscriberId:subscriberId status:@"close" coordinate:[self getCurrentLocation]];
     
@@ -100,11 +87,6 @@
             completion(YES, nil);
         }
     }];
-}
-
--(void)trackClosedUsageFromNowSilentlyBySubscriberId:(NSNumber *)subscriberId{
-    NSDictionary *payload = [HLMiscellaneous serialiseTrackingTimeSpentPayloadFromCurrentWithSubscriberId:subscriberId status:@"open" coordinate:[self getCurrentLocation]];
-    [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_ANALYTIC_TIME_SPENT method:HL_HTTP_POST params:payload onCompletion:nil];
 }
 
 

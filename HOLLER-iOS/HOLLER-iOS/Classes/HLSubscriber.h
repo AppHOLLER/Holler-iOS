@@ -131,14 +131,6 @@
 -(void)updateBySubscriberId: (NSNumber *)subscriberId
                onCompletion: (void (^)(BOOL, HLError*))completion NS_AVAILABLE_IOS(8_0);
 
-/*!
- *  @brief update subscriber by id. Calling this method as "Call-Forget" mechanism
- *
- *  @param subscriberId unique id of subscriber, that is registered
- *
- *  @since 0.0.1
- */
--(void)updateBySubscriberIdSilently: (NSNumber *)subscriberId NS_AVAILABLE_IOS(8_0);
 
 /*!
  *  @brief register subscriber. Calling this method as asynchronous callback block
@@ -149,12 +141,6 @@
  */
 -(void)registerSubscriberOnCompletion: (void (^)(BOOL,HLError*, NSNumber*))completion NS_AVAILABLE_IOS(8_0);
 
-/*!
- *  @brief register subscriber in silent mode. Calling this method as "Call-Forget" mechanism
- *
- *  @since 0.0.1
- */
--(void)registerSubscriberSilently NS_AVAILABLE_IOS(8_0);
 
 /*!
  *  @brief fetch/get all subscribers. Calling this method as asynchronous callback method
