@@ -109,7 +109,7 @@
     [subscriber registerSubscriberOnCompletion:^(BOOL succeed, HLError *error, NSNumber *subscriberId) {
         if (error) {
             //handle error object with description and error status
-            NSLog(@"Error");
+            NSLog(@"Error: %@", error.errorMessage);
         } else {
             //succeed. subscriberId'll returned back
             NSLog(@"Success");

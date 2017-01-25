@@ -73,7 +73,7 @@
 //Error
 #define ERROR_DETAIL                                                @"detail"
 #define ERROR_BOOLEAN                                               @"error"
-#define ERROR_STATUS_CODE                                           @"status_code"
+#define ERROR_STATUS_CODE                                           @"status"
 
 
 //Subscriber

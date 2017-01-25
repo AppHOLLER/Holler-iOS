@@ -95,6 +95,13 @@ typedef NS_ENUM(NSUInteger, HLHTTPErrorCode) {
 @property(nonatomic, nonnull, readonly) NSNumber *errorStatus;
 
 /*!
+ *  @brief Error message with string data
+ *
+ *  @since 1.2.2
+ */
+@property(nonatomic, nonnull, readonly) NSString *errorMessage;
+
+/*!
  *  @brief Initialise a "fresh" error object to wrap error inside
  *
  *  @return this return error model

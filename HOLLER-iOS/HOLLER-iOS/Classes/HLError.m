@@ -26,7 +26,14 @@
         //intialisation phrase
         self->_errorCode = [self identifyErrorCode:[jsonData[ERROR_STATUS_CODE] integerValue]];
         self->_errorStatus = [NSNumber numberWithBool:[jsonData[ERROR_BOOLEAN] boolValue]];
-        self->_errorDescription = jsonData[ERROR_DETAIL];
+        NSArray* errors = jsonData[@"errors"];
+        if (jsonData[ERROR_DETAIL] != nil) {
+            self->_errorDescription = jsonData[ERROR_DETAIL];
+        } else if (errors != nil) {
+            self->_errorDescription = errors.firstObject;
+        }
+        NSString* message = jsonData[@"message"];
+        self->_errorMessage = message == nil ? @"Unknown Error" : message;
     }
     return self;
 }
@@ -68,6 +75,11 @@
     }
     
     return HL_REQUEST_ERROR_UNDEFINED;
+}
+
+-(NSString*) errorDetailMessage {
+    NSString* message = self->_errorDescription[@"message"];
+    return message == nil ? @"Unknown Error" : message;
 }
 
 @end
