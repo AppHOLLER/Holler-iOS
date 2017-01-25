@@ -93,14 +93,14 @@
     HLSubscriber *subscriber = [[HLSubscriber alloc] init];
     [subscriber setSubscriberFirstName:@"rain"];
     [subscriber setSubscriberLastName:@"maker"];
-    [subscriber setSubscriberEmail:@"nguyenhuynh2688@gmail.com"];
+    [subscriber setSubscriberEmail:@"nguyenhuynh@gmail.com"];
     [subscriber setSubscriberUsername:@"rainMaker"];
-    [subscriber setSubscriberCellphoneNumber:@"841233744033"];
+    [subscriber setSubscriberCellphoneNumber:@"841233744066"];
     
     [subscriber setSubscriberInformations:@{@"gps_latitude": @0,
                                             @"gps_longitude": @0,
                                             @"gender": @"male",
-                                            @"date_of_birth": @"2016/6/12",
+                                            @"date_of_birth": @"1988/6/2",
                                             @"country": @"SG",
                                             @"industry": @"",
                                             @"designation": @"",
