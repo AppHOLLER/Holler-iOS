@@ -93,18 +93,19 @@
     HLSubscriber *subscriber = [[HLSubscriber alloc] init];
     [subscriber setSubscriberFirstName:@"rain"];
     [subscriber setSubscriberLastName:@"maker"];
-    [subscriber setSubscriberEmail:@"nguyenhuynh@gmail.com"];
-    [subscriber setSubscriberUsername:@"rainMaker"];
-    [subscriber setSubscriberCellphoneNumber:@"841233744066"];
+    [subscriber setSubscriberEmail:@"nguyenhuynh04@gmail.com"];
+    [subscriber setSubscriberUsername:@"rainMaker04"];
+    [subscriber setSubscriberCellphoneNumber:@"+841233700009"];
     
     [subscriber setSubscriberInformations:@{@"gps_latitude": @0,
                                             @"gps_longitude": @0,
                                             @"gender": @"male",
-                                            @"date_of_birth": @"1988/6/2",
+                                            @"date_of_birth": @"1988-6-2",
                                             @"country": @"SG",
                                             @"industry": @"",
                                             @"designation": @"",
                                             @"interest_id": @""}];
+    
     [subscriber registerSubscriberOnCompletion:^(BOOL succeed, HLError *error, NSNumber *subscriberId) {
         if (error) {
             //handle error object with description and error status

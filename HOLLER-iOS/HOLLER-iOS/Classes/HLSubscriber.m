@@ -112,12 +112,38 @@
 -(void)registerSubscriberOnCompletion:(void (^)(BOOL, HLError*, NSNumber*))completion{
     [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_REGISTER_SUBSCRIBER method:HL_HTTP_POST objectId:nil params:[HLMiscellaneous deserialiseSubscriber:self] onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject){
         if(error){
+            if (completion == nil) { return; }
+            completion(NO, errorObject, nil);
+        }else{
+            if (completion == nil) { return; }
+            NSNumber* subscriberId = [self iterateSubscriberId:responseObject];
+            NSString* deviceToken = self.subscriberDeviceToken == nil ? @"" : self.subscriberDeviceToken;
+            // Silently update device token after registering successfully new subscriber
+            [self updateBySubscriberId:subscriberId withDeviceToken:deviceToken onCompletion:^(BOOL succeed, HLError *error) {
+                succeed ? completion(YES, nil, subscriberId) : completion(NO, errorObject, nil);
+            }];
+        }
+    }];
+}
+
+-(void)updateBySubscriberId:(NSNumber *)subscriberId withDeviceToken:(NSString*)token onCompletion:(void (^)(BOOL, HLError*))completion {
+    
+    NSDictionary *param = @{
+                            SUBSCRIBER_DEVICE_TOKEN: token,
+                            SUBSCRIBER_DEVICE_TYPE: @"ios",
+                            };
+    
+    [[HLServiceManager standardManager] executeRESTRequestWithCredential:HOLLER_SERVICE_UPDATE_DEVICE_TOKEN
+                                                                  method:HL_HTTP_POST objectId:[subscriberId stringValue]
+                                                                  params:param
+                                                            onCompletion:^(BOOL succeed, NSError *error, HLError *errorObject, id responseObject){
+        if(error){
             if (completion) {
-                completion(NO, errorObject, nil);
+                completion(NO, errorObject);
             }
         }else{
             if (completion) {
-                completion(YES, nil, [self iterateSubscriberId:responseObject]);
+                completion(YES, nil);
             }
         }
     }];

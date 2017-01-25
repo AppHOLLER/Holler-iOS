@@ -49,49 +49,49 @@
  *
  *  @since 0.0.1
  */
-@property(nonatomic, weak) NSString *subscriberDeviceToken;
+@property(nonatomic, strong) NSString *subscriberDeviceToken;
 
 /*!
  *  @brief username subscriber registered for HOLLER service
  *
  *  @since 0.0.1
  */
-@property(nonatomic, weak) NSString *subscriberUsername;
+@property(nonatomic, strong) NSString *subscriberUsername;
 
 /*!
  *  @brief email of subscriber registered for HOLLER service
  *
  *  @since 0.0.1
  */
-@property(nonatomic, weak) NSString *subscriberEmail;
+@property(nonatomic, strong) NSString *subscriberEmail;
 
 /*!
  *  @brief firstname of subscriber registered for HOLLER service
  *
  *  @since 0.0.1
  */
-@property(nonatomic, weak) NSString *subscriberFirstName;
+@property(nonatomic, strong) NSString *subscriberFirstName;
 
 /*!
  *  @brief lastname of subscriber registered for HOLLER service
  *
  *  @since 0.0.1
  */
-@property(nonatomic, weak) NSString *subscriberLastName;
+@property(nonatomic, strong) NSString *subscriberLastName;
 
 /*!
  *  @brief status determines subscriber is currently active/inactive
  *
  *  @since 0.0.1
  */
-@property(nonatomic, weak) NSNumber *subscriberActiveStatus;
+@property(nonatomic, strong) NSNumber *subscriberActiveStatus;
 
 /*!
  *  @brief cellphone number belongs to subscriber registered for HOLLER service
  *
  *  @since 0.0.1
  */
-@property(nonatomic, weak) NSString *subscriberCellphoneNumber;
+@property(nonatomic, strong) NSString *subscriberCellphoneNumber;
 
 /*!
  *  @brief information K-V data contains demographic target of subscriber to send out campaign

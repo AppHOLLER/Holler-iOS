@@ -55,7 +55,7 @@
     NSString *deviceToken = [HollerUserDefaults objectForKey:HLDeviceToken];
     if (deviceToken != nil) {
         return @{SUBSCRIBER_USERNAME: subscriber.subscriberUsername,
-                 SUBSCRIBER_DEVICE_TOKEN: !subscriber.subscriberDeviceToken?deviceToken:subscriber.subscriberDeviceToken,
+                 //SUBSCRIBER_DEVICE_TOKEN: !subscriber.subscriberDeviceToken?deviceToken:subscriber.subscriberDeviceToken,
                  SUBSCRIBER_DEVICE_TYPE: @"ios",
                  SUBSCRIBER_EMAIL_ADDRESS: subscriber.subscriberEmail,
                  SUBSCRIBER_FIRSTNAME: subscriber.subscriberFirstName,

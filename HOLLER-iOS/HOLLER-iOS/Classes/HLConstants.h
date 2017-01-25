@@ -32,6 +32,7 @@
 #define HOLLER_SERVICE_REGISTER_SUBSCRIBER                          @"/subscribers/register/"
 #define HOLLER_SERVICE_UPDATE_SUBSCRIBER                            @"/subscribers/%@"
 #define HOLLER_SERVICE_TRIGGER_EVENT                                @"/subscribers/%@/events/"
+#define HOLLER_SERVICE_UPDATE_DEVICE_TOKEN                          @"/subscribers/%@/device_token/"
 
 //Gender
 #define HOLLER_SERVICE_GET_LIST_GENDER                              @"/target/?content_type=gender"
